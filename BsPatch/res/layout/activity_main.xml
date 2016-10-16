@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lhl.bspatch.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/patchPath"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="差分包路径"
+            android:singleLine="true" />
+        
+        <Button 
+            android:id="@+id/patchPathBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="..."/>
+    </LinearLayout>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="生成的新版本在根目录下名字为New_(your appName).apk" />
+
+    <Button
+        android:id="@+id/patch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="合并" />
+    
+    <LinearLayout
+        android:id="@+id/tipLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:visibility="invisible" >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="正在合并差分包..." />
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/patchResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25sp" />
+    
+    <Button 
+        android:onClick="getVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取版本号"/>
+
+</LinearLayout>
